@@ -9,8 +9,11 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci
+# Remove npm and switch to bun
+RUN npm uninstall -g npm && npm install -g bun
+
+# Install dependencies using bun
+RUN bun install
 
 # Copy source code
 COPY . .
