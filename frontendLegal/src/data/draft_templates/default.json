@@ -1,0 +1,28 @@
+{
+    "region": "Global",
+    "templates": [
+        {
+            "id": "nda",
+            "name": "Non-Disclosure Agreement",
+            "description": "Standard unilateral or mutual NDA.",
+            "fields": [
+                "party_a",
+                "party_b",
+                "effective_date",
+                "jurisdiction"
+            ]
+        },
+        {
+            "id": "employment_contract",
+            "name": "Employment Contract",
+            "description": "Standard employment agreement.",
+            "fields": [
+                "employer",
+                "employee",
+                "start_date",
+                "salary",
+                "position"
+            ]
+        }
+    ]
+}

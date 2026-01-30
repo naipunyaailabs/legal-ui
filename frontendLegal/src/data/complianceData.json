@@ -1,0 +1,32 @@
+[
+    {
+        "title": "ISO/IEC 27001",
+        "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/ISO_and_IEC_logo_combined.svg/200px-ISO_and_IEC_logo_combined.svg.png",
+        "description": "Implements ISO/IEC 27001–aligned security controls.",
+        "details": "ISO/IEC 27001 is an international standard for information security management systems (ISMS). It provides a systematic approach to managing sensitive company information, ensuring it remains secure through people, processes, and IT systems. Legal Aid's security practices are designed to align with the core principles of ISO/IEC 27001, including risk assessment, access control, and continuous improvement."
+    },
+    {
+        "title": "SOC 2",
+        "logoUrl": "https://images.credly.com/images/5c7b02f6-a3b2-4e9b-9c89-0f4e4c0e8e3f/soc2-type2.png",
+        "description": "Built with SOC 2 Trust Service Criteria–based best practices.",
+        "details": "SOC 2 (Service Organization Control 2) is an auditing standard developed by the AICPA that evaluates an organization's information systems relevant to security, availability, processing integrity, confidentiality, and privacy. Legal Aid follows SOC 2 Trust Services Criteria to ensure robust security controls, regular monitoring, and transparent reporting of our security posture."
+    },
+    {
+        "title": "SOC 2 Type 2",
+        "logoUrl": "https://images.credly.com/images/5c7b02f6-a3b2-4e9b-9c89-0f4e4c0e8e3f/soc2-type2.png",
+        "description": "Implements SOC 2 Type 2 operational security standards.",
+        "details": "SOC 2 Type 2 reports evaluate the operational effectiveness of security controls over a period of time (typically 6-12 months). Legal Aid's security infrastructure is designed to meet SOC 2 Type 2 standards, demonstrating not just the presence of controls, but their consistent effectiveness over time in protecting client data."
+    },
+    {
+        "title": "GDPR",
+        "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/200px-Flag_of_Europe.svg.png",
+        "description": "Designed to support GDPR-aligned data protection requirements.",
+        "details": "The General Data Protection Regulation (GDPR) is the EU's comprehensive data protection law. Legal Aid's platform is designed to meet GDPR requirements, including data minimization, purpose limitation, user consent management, data portability, and the right to be forgotten. We implement privacy-by-design principles in all our systems and processes."
+    },
+    {
+        "title": "CCPA",
+        "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/200px-Flag_of_California.svg.png",
+        "description": "Follows CCPA-aligned privacy practices for user data.",
+        "details": "The California Consumer Privacy Act (CCPA) grants California residents specific rights regarding their personal information. Legal Aid follows CCPA privacy guidelines, providing users with transparency about data collection, the right to opt-out of data sales, the right to deletion, and the right to non-discrimination for exercising their privacy rights."
+    }
+]

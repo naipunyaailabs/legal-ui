@@ -1,0 +1,32 @@
+[
+    {
+        "title": "CERT-In Guidelines",
+        "icon": "shield-network",
+        "description": "Aligned with CERT-In cybersecurity directives",
+        "details": "CERT-In (Indian Computer Emergency Response Team) is the national nodal agency for responding to computer security incidents. Legal Aid's security infrastructure is designed to align with CERT-In's cybersecurity guidelines, including incident response protocols, vulnerability management, and proactive threat monitoring to protect user data and maintain system integrity."
+    },
+    {
+        "title": "DPDP Act 2023",
+        "icon": "privacy-shield",
+        "description": "Designed to support DPDP data protection requirements",
+        "details": "The Digital Personal Data Protection Act 2023 is India's comprehensive data protection law. Legal Aid's platform is designed to support DPDP Act requirements, including lawful data processing, user consent management, data minimization, purpose limitation, and the rights of data principals including the right to correction, erasure, and grievance redressal."
+    },
+    {
+        "title": "IT Act 2000",
+        "icon": "document-lock",
+        "description": "Follows IT Act 2000 security practices",
+        "details": "The Information Technology Act 2000 provides the legal framework for electronic governance and cybersecurity in India. Legal Aid follows IT Act 2000 security practices, including reasonable security practices for sensitive personal data, secure electronic records management, and compliance with data protection obligations under Section 43A and the IT Rules 2011."
+    },
+    {
+        "title": "RBI Security Guidelines",
+        "icon": "bank-security",
+        "description": "Adheres to RBI-recommended security controls",
+        "details": "The Reserve Bank of India provides comprehensive cybersecurity guidelines for financial and technology service providers. Legal Aid adheres to RBI-recommended security controls, including multi-factor authentication, encryption standards, regular security audits, incident response procedures, and customer data protection measures aligned with RBI's cybersecurity framework."
+    },
+    {
+        "title": "ISO/IEC 27001",
+        "icon": "iso-standard",
+        "description": "Implements ISO/IEC 27001–aligned controls",
+        "details": "ISO/IEC 27001 is an internationally recognized standard for information security management systems (ISMS), widely adopted in India. Legal Aid implements ISO/IEC 27001-aligned controls including risk assessment, access control, cryptographic controls, physical security, operations security, and continuous monitoring to ensure comprehensive information security management."
+    }
+]

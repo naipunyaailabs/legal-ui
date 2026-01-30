@@ -1,0 +1,91 @@
+/* Elegant micro-animations for feature cards */
+
+/* ASK feature - scanning/pulse effect */
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes scanner {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* INTERACT feature - floating/upload animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* DRAFT feature - typing/writing animation */
+@keyframes typing-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% -200%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+/* Apply animations */
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.animate-scanner {
+  background-size: 200% 200%;
+  animation: scanner 4s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-wave {
+  background-size: 200% 200%;
+  animation: wave 5s ease-in-out infinite;
+}
+
+.animate-typing-pulse {
+  animation: typing-pulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 200%;
+  animation: shimmer 6s linear infinite;
+}

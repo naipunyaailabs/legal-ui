@@ -1,0 +1,42 @@
+{
+    "region": "India",
+    "templates": [
+        {
+            "id": "nda_in",
+            "name": "Non-Disclosure Agreement (India)",
+            "description": "NDA compliant with Indian Contract Act, 1872.",
+            "fields": [
+                "disclosing_party",
+                "receiving_party",
+                "effective_date",
+                "state_jurisdiction"
+            ]
+        },
+        {
+            "id": "rent_agreement",
+            "name": "Rent Agreement",
+            "description": "Residential rent agreement for India.",
+            "fields": [
+                "landlord",
+                "tenant",
+                "property_address",
+                "rent_amount",
+                "security_deposit",
+                "lease_duration"
+            ]
+        },
+        {
+            "id": "employment_contract_in",
+            "name": "Employment Contract (India)",
+            "description": "Employment agreement compliant with Indian labor laws.",
+            "fields": [
+                "employer",
+                "employee",
+                "joining_date",
+                "ctc",
+                "designation",
+                "probation_period"
+            ]
+        }
+    ]
+}

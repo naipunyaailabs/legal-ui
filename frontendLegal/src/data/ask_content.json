@@ -1,0 +1,32 @@
+{
+  "title": "Legal Research Assistant",
+  "subtitle": "Ask complex legal questions and get AI-powered answers with IRAC analysis.",
+  "modes": [
+    {
+      "id": "hybrid",
+      "label": "Hybrid Research",
+      "description": "Combines general legal knowledge with uploaded documents."
+    },
+    {
+      "id": "document",
+      "label": "Document Only",
+      "description": "Strictly answers based on uploaded documents."
+    },
+    {
+      "id": "general",
+      "label": "General Knowledge",
+      "description": "Uses broad legal knowledge without specific documents."
+    },
+    {
+      "id": "layman",
+      "label": "Layman Terms",
+      "description": "Explains legal concepts in simple, easy-to-understand language."
+    }
+  ],
+  "placeholders": [
+    "What are the key clauses in this contract?",
+    "Explain the liability section in simple terms.",
+    "Does this document comply with California labor laws?",
+    "Draft a response to this demand letter."
+  ]
+}
