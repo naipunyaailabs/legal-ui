@@ -73,8 +73,7 @@ const App = () => (
                   <Route path="/public/draft" element={<PublicDashboard><Draft /></PublicDashboard>} />
                   <Route path="/public/agents" element={<PublicDashboard><Agents /></PublicDashboard>} />
                   <Route path="/public/chat" element={<PublicDashboard><Chat /></PublicDashboard>} />
-                  <Route path="/public/ask" element={<Navigate to="/assistant" replace />} />
-                  <Route path="/public/assistant" element={<Navigate to="/assistant" replace />} />
+                  <Route path="/public/ask" element={<Navigate to="/public/assistant" replace />} />
 
                   {/* Protected routes for authenticated users */}
                   <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
