@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: lexrag-db
+    environment:
+      POSTGRES_USER: lexrag
+      POSTGRES_PASSWORD: lexrag
+      POSTGRES_DB: lexrag
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lexrag"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: lexrag-api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://lexrag:lexrag@postgres:5432/lexrag
+      DATABASE_URL_SYNC: postgresql://lexrag:lexrag@postgres:5432/lexrag
+      GROQ_API_KEY: ${GROQ_API_KEY}
+      DATA_DIR: /app/data
+      CORS_ORIGINS: '["http://localhost:3000"]'
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:

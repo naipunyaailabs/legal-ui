@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.env
+venv/
+.venv/
+*.db
+*.db-shm
+*.db-wal
+
+# Node
+node_modules/
+.next/
+.env.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models (large, auto-downloaded)
+# sentence-transformers cache is in ~/.cache/huggingface
