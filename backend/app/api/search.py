@@ -12,7 +12,7 @@ router = APIRouter()
 def search_cases(req: SearchRequest, db: Session = Depends(get_db)):
     results = hybrid_search(db=db, query=req.query, state=req.state, year=req.year,
                             company_tag=req.company_tag, act=req.act, stage=req.stage,
-                            top_k=req.page_size * 2, rerank_top_k=req.page_size)
+                            top_k=200)
     items = [SearchResultItem(case=CaseListItem.model_validate(r["case"]), score=round(r["score"], 4),
                               matched_chunk=r.get("matched_chunk", ""), match_reason=r.get("match_reason", ""))
              for r in results]

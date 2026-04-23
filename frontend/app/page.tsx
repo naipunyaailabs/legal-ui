@@ -119,7 +119,7 @@ export default function DashboardPage() {
             {yearEntries.map(([year, count]) => (
               <div key={year} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                 <span style={{ fontSize: "12px", color: "var(--text-muted)", width: "40px" }}>{year}</span>
-                <div style={{ flex: 1, height: "20px", background: "rgba(255,255,255,0.03)", borderRadius: "4px", overflow: "hidden" }}>
+                <div style={{ flex: 1, height: "20px", background: "rgba(0,0,0,0.04)", borderRadius: "4px", overflow: "hidden" }}>
                   <motion.div
                     style={{
                       height: "100%",
@@ -153,7 +153,7 @@ export default function DashboardPage() {
                 >
                   {court}
                 </span>
-                <div style={{ flex: 1, height: "20px", background: "rgba(255,255,255,0.03)", borderRadius: "4px", overflow: "hidden" }}>
+                <div style={{ flex: 1, height: "20px", background: "rgba(0,0,0,0.04)", borderRadius: "4px", overflow: "hidden" }}>
                   <motion.div
                     style={{
                       height: "100%",
@@ -188,8 +188,8 @@ export default function DashboardPage() {
                 alignItems: "center",
                 padding: "12px 16px",
                 borderRadius: "10px",
-                background: "rgba(255,255,255,0.02)",
-                border: "1px solid rgba(255,255,255,0.04)",
+                background: "rgba(0,0,0,0.015)",
+                border: "1px solid rgba(0,0,0,0.04)",
                 textDecoration: "none",
                 color: "inherit",
                 transition: "all 0.2s",

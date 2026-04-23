@@ -127,7 +127,10 @@ def hybrid_search(
                     "match_reason": cs.get("chunk_type", "keyword"),
                 })
             results.sort(key=lambda x: x["score"], reverse=True)
-            return results[:rerank_top_k]
+            # Filter by relevance threshold (e.g., 0.2) to show only "good" matches
+            relevant_results = [r for r in results if r["score"] > 0.2]
+            # Return all relevant results, but at least 3 to show something
+            return relevant_results if relevant_results else results[:3]
         except Exception as e:
             logger.warning(f"Reranker failed: {e}")
 
@@ -142,4 +145,5 @@ def hybrid_search(
             "match_reason": cs.get("chunk_type", "keyword"),
         })
     results.sort(key=lambda x: x["score"], reverse=True)
-    return results[:rerank_top_k]
+    relevant_results = [r for r in results if r["score"] > 0.3]
+    return relevant_results if relevant_results else results[:3]

@@ -25,3 +25,6 @@ Thumbs.db
 
 # Models (large, auto-downloaded)
 # sentence-transformers cache is in ~/.cache/huggingface
+
+AGENTS.md
+CLAUDE.md

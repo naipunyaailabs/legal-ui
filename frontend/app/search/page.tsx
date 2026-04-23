@@ -17,6 +17,8 @@ export default function SearchPage() {
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
   const [filters, setFilters] = useState({ state: "", year: "", company_tag: "" });
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,6 +33,7 @@ export default function SearchPage() {
         company_tag: filters.company_tag || undefined,
       });
       setResults(data.results);
+      setCurrentPage(1); // Reset to first page on new search
     } catch (err: any) {
       setResults([]);
     } finally {
@@ -123,17 +126,61 @@ export default function SearchPage() {
 
         {!loading && results.length > 0 && (
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <p style={{ fontSize: "13px", color: "var(--text-muted)", marginBottom: "4px" }}>
-              {results.length} results found
-            </p>
-            {results.map((r, i) => (
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "4px" }}>
+              <p style={{ fontSize: "13px", color: "var(--text-muted)" }}>
+                {results.length} results found
+              </p>
+              
+              <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                {results.length > pageSize && (
+                  <div style={{ display: "flex", gap: "4px" }}>
+                    {Array.from({ length: Math.ceil(results.length / pageSize) }, (_, i) => {
+                      const pageNum = i + 1;
+                      if (pageNum > 5) return null; // Show max 5 pages at top to keep it clean
+                      return (
+                        <button
+                          key={pageNum}
+                          className={currentPage === pageNum ? "btn-primary" : "btn-ghost"}
+                          style={{ width: "32px", height: "32px", padding: 0, justifyContent: "center", fontSize: "12px" }}
+                          onClick={() => setCurrentPage(pageNum)}
+                        >
+                          {pageNum}
+                        </button>
+                      );
+                    })}
+                    {Math.ceil(results.length / pageSize) > 5 && (
+                      <span style={{ display: "flex", alignItems: "center", padding: "0 4px", color: "var(--text-muted)", fontSize: "12px" }}>...</span>
+                    )}
+                  </div>
+                )}
+
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <span style={{ fontSize: "12px", color: "var(--text-muted)" }}>Show:</span>
+                  <select 
+                    className="input-glass" 
+                    style={{ width: "80px", height: "32px", padding: "0 8px", fontSize: "12px" }}
+                    value={pageSize}
+                    onChange={(e) => {
+                      setPageSize(Number(e.target.value));
+                      setCurrentPage(1);
+                    }}
+                  >
+                    {[10, 50, 100, 150, 200].map(size => (
+                      <option key={size} value={size} style={{ background: "white", color: "black" }}>{size}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {results.slice((currentPage - 1) * pageSize, currentPage * pageSize).map((r, i) => (
               <motion.div
                 key={r.case.id}
                 className="glass-card"
                 style={{ padding: "20px" }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
+                transition={{ delay: i * 0.02 }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                   <div style={{ flex: 1 }}>
@@ -157,7 +204,7 @@ export default function SearchPage() {
                         color: "var(--text-secondary)",
                         marginTop: "12px",
                         padding: "10px 14px",
-                        background: "rgba(99,102,241,0.05)",
+                        background: "rgba(79, 70, 229, 0.05)",
                         borderLeft: "3px solid var(--accent-primary)",
                         borderRadius: "0 8px 8px 0",
                         lineHeight: "1.5",
@@ -171,7 +218,7 @@ export default function SearchPage() {
                       className="badge badge-info"
                       style={{ fontSize: "11px" }}
                     >
-                      Score: {(r.score * 100).toFixed(0)}%
+                      Score: {((r.score / Math.max(...results.map(res => res.score), 1)) * 100).toFixed(0)}%
                     </div>
                     {r.case.company_tags?.map((tag: string) => (
                       <span key={tag} className="badge badge-success" style={{ fontSize: "11px" }}>
@@ -182,6 +229,48 @@ export default function SearchPage() {
                 </div>
               </motion.div>
             ))}
+
+            {/* Pagination Controls */}
+            {results.length > pageSize && (
+              <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", marginTop: "24px" }}>
+                <button 
+                  className="btn-ghost" 
+                  style={{ padding: "8px 12px" }}
+                  disabled={currentPage === 1}
+                  onClick={() => setCurrentPage(prev => prev - 1)}
+                >
+                  Previous
+                </button>
+                
+                <div style={{ display: "flex", gap: "4px" }}>
+                  {Array.from({ length: Math.min(5, Math.ceil(results.length / pageSize)) }, (_, i) => {
+                    const pageNum = i + 1;
+                    return (
+                      <button
+                        key={pageNum}
+                        className={currentPage === pageNum ? "btn-primary" : "btn-ghost"}
+                        style={{ width: "36px", height: "36px", padding: 0, justifyContent: "center" }}
+                        onClick={() => setCurrentPage(pageNum)}
+                      >
+                        {pageNum}
+                      </button>
+                    );
+                  })}
+                  {Math.ceil(results.length / pageSize) > 5 && (
+                    <span style={{ display: "flex", alignItems: "center", padding: "0 8px", color: "var(--text-muted)" }}>...</span>
+                  )}
+                </div>
+
+                <button 
+                  className="btn-ghost" 
+                  style={{ padding: "8px 12px" }}
+                  disabled={currentPage === Math.ceil(results.length / pageSize)}
+                  onClick={() => setCurrentPage(prev => prev + 1)}
+                >
+                  Next
+                </button>
+              </div>
+            )}
           </div>
         )}
       </AnimatePresence>

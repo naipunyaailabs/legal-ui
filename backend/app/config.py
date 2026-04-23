@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     DATA_DIR: str = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "..", "data")
 
     # App
-    APP_NAME: str = "LexRAG Counsel"
+    APP_NAME: str = "LegalAID"
     DEBUG: bool = True
     CORS_ORIGINS: list[str] = ["http://localhost:3000"]
 

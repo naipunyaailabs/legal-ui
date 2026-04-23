@@ -13,7 +13,7 @@
 # PRD: Company-Specific Legal AI RAG System for Indian Case Data
  
 ## 1. Product Name
-**LexRAG Counsel**  
+**LegalAID**  
 Internal AI-powered legal research, drafting, and litigation assistance platform for company-specific Indian legal cases.
  
 ---

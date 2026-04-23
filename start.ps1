@@ -1,7 +1,7 @@
-# Quick Start Script for LexRAG Counsel
+# Quick Start Script for LegalAID
 # Run this from the root: .\start.ps1
 
-Write-Host "Starting LexRAG Counsel..." -ForegroundColor Cyan
+Write-Host "Starting LegalAID..." -ForegroundColor Cyan
 
 # Start backend in background
 Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$PSScriptRoot\backend'; .\venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000"

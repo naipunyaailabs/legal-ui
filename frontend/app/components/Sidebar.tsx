@@ -22,9 +22,9 @@ export default function Sidebar() {
         top: 0,
         bottom: 0,
         width: "260px",
-        background: "rgba(10, 14, 26, 0.95)",
+        background: "rgba(255, 255, 255, 0.8)",
         backdropFilter: "blur(20px)",
-        borderRight: "1px solid rgba(255,255,255,0.06)",
+        borderRight: "1px solid rgba(0, 0, 0, 0.06)",
         display: "flex",
         flexDirection: "column",
         padding: "24px 16px",
@@ -37,7 +37,7 @@ export default function Sidebar() {
           className="gradient-text"
           style={{ fontSize: "22px", fontWeight: 800, letterSpacing: "-0.5px" }}
         >
-          LexRAG Counsel
+          LegalAID
         </h1>
         <p style={{ fontSize: "11px", color: "var(--text-muted)", marginTop: "4px" }}>
           Legal AI Research Platform
@@ -62,9 +62,9 @@ export default function Sidebar() {
                 fontWeight: isActive ? 600 : 400,
                 color: isActive ? "var(--text-primary)" : "var(--text-secondary)",
                 background: isActive
-                  ? "linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(139,92,246,0.1) 100%)"
+                  ? "linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(124, 58, 237, 0.05) 100%)"
                   : "transparent",
-                border: isActive ? "1px solid rgba(99,102,241,0.2)" : "1px solid transparent",
+                border: isActive ? "1px solid rgba(79, 70, 229, 0.15)" : "1px solid transparent",
                 textDecoration: "none",
                 transition: "all 0.2s ease",
                 position: "relative",
@@ -97,7 +97,7 @@ export default function Sidebar() {
       <div
         style={{
           padding: "16px",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
+          borderTop: "1px solid rgba(0, 0, 0, 0.06)",
           fontSize: "11px",
           color: "var(--text-muted)",
         }}
