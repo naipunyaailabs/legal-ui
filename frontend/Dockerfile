@@ -8,7 +8,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 # BACKEND_URL must be set at build time for Next.js rewrites
-ARG BACKEND_URL=https://backend.legal-aid.in
+ARG BACKEND_URL=https://legalaibackend.cognitbotz.com
 ENV BACKEND_URL=$BACKEND_URL
 RUN npm run build
 

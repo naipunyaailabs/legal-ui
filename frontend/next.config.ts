@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const backendUrl = process.env.BACKEND_URL || "http://localhost:8000";
+const backendUrl = process.env.BACKEND_URL || "https://legalaibackend.cognitbotz.com";
 
 const nextConfig: NextConfig = {
   output: "standalone",
